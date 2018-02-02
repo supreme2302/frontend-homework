@@ -7,8 +7,8 @@ QUnit.module('Тестируем функцию euclid', function () {
 
     QUnit.test('На входе некоторые из чисел не являются натуральным', function (assert) {
         assert.strictEqual(isNaN(euclid(4, 0, 6)), true, 'euclid(4, 0, 6) === NaN');
-	assert.strictEqual(isNaN(euclid(0)), true, 'euclid(0) === NaN');
-	assert.strictEqual(isNaN(euclid(0, 42, 85, 0, 0)), true, 'euclid(0, 42, 85, 0, 0) === NaN');
+		assert.strictEqual(isNaN(euclid(0)), true, 'euclid(0) === NaN');
+		assert.strictEqual(isNaN(euclid(0, 42, 85, 0, 0)), true, 'euclid(0, 42, 85, 0, 0) === NaN');
     });
 
 	QUnit.test('На входе всего одно число', function (assert) {
