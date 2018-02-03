@@ -9,7 +9,9 @@ const nod = (lhs, rhs) => {
     }
 
     return lhs;
-}
+};
 
 
-const euclid = (...data) => data.reduce((result, element) => (result && element > 0) ? nod(result, element) : undefined, data[0]);
+const euclid = (...data) => data.reduce((result, element) =>
+    (result && element > 0) ? nod(result, element) : undefined,
+    data[0]);
