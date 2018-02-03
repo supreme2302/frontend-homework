@@ -1,14 +1,21 @@
 'use strict';
 
 QUnit.module('Тестируем функцию euclid', function () {
-    QUnit.test('На входе нет чисел', function (assert) {
-        assert.strictEqual(isNaN(euclid()), true, 'euclid() === NaN');
+    QUnit.test('Функция возвращает undefined, если на входе нет чисел', function (assert) {
+        assert.strictEqual(euclid(), undefined, 'euclid() === undefined');
     });
 
     QUnit.test('На входе некоторые из чисел не являются натуральным', function (assert) {
-        assert.strictEqual(isNaN(euclid(4, 0, 6)), true, 'euclid(4, 0, 6) === NaN');
-		assert.strictEqual(isNaN(euclid(0)), true, 'euclid(0) === NaN');
-		assert.strictEqual(isNaN(euclid(0, 42, 85, 0, 0)), true, 'euclid(0, 42, 85, 0, 0) === NaN');
+        assert.strictEqual(euclid(4, 0, 6), undefined, 'euclid(4, 0, 6) === undefined');
+		assert.strictEqual(euclid(0), undefined, 'euclid(0) === undefined');
+		assert.strictEqual(euclid(0, 42, 85, -1, -5), undefined, 'euclid(0, 42, 85, 0, 0) === undefined');
+    });
+
+    QUnit.test('Функция не меняет знаечения аргументов', function (assert) {
+    	let obj = 5;
+        assert.strictEqual(euclid(obj, 15), 5, 'euclid(obj, 15) === 5');
+        assert.strictEqual(euclid(obj), 5, 'euclid(obj) === 5');
+
     });
 
 	QUnit.test('На входе всего одно число', function (assert) {

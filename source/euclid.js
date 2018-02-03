@@ -1,29 +1,20 @@
 'use strict';
 
 
-function nod(a, b) {
-    while (b > 0) {
-        var x = a % b;
-        a = b;
-        b = x;
+function nod(lhs, rhs) {
+    while (rhs > 0) {
+        let x = lhs % rhs;
+        lhs = rhs;
+        rhs = x;
     }
 
-    return a;
+    return lhs;
 }
 
 
-function euclid() {
-    if (arguments.length === 0)
-        return NaN;
+const euclid = (...data) => data.reduce(function(res, obj) {
+    if (res !== undefined && obj > 0)
+        return nod(res, obj);
+    return undefined;
 
-    var result = arguments[0];
-
-    for (var i = 1; i < arguments.length; i++) {
-        if (arguments[i] <= 0)
-            return NaN;
-
-        result = nod(result, arguments[i]);
-    }
-
-    return result;
-}
+}, data[0]);
