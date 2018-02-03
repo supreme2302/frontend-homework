@@ -1,9 +1,9 @@
 'use strict';
 
 
-function nod(lhs, rhs) {
+const nod = (lhs, rhs) => {
     while (rhs > 0) {
-        let x = lhs % rhs;
+        const x = lhs % rhs;
         lhs = rhs;
         rhs = x;
     }
@@ -12,9 +12,4 @@ function nod(lhs, rhs) {
 }
 
 
-const euclid = (...data) => data.reduce(function(res, obj) {
-    if (res !== undefined && obj > 0)
-        return nod(res, obj);
-    return undefined;
-
-}, data[0]);
+const euclid = (...data) => data.reduce((res, obj) => (res && obj > 0) ? nod(res, obj) : undefined, data[0]);
