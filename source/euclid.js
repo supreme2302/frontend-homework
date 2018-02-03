@@ -3,13 +3,13 @@
 
 const nod = (lhs, rhs) => {
     while (rhs > 0) {
-        const x = lhs % rhs;
+        const buf = lhs % rhs;
         lhs = rhs;
-        rhs = x;
+        rhs = buf;
     }
 
     return lhs;
 }
 
 
-const euclid = (...data) => data.reduce((res, obj) => (res && obj > 0) ? nod(res, obj) : undefined, data[0]);
+const euclid = (...data) => data.reduce((result, elem) => (result && elem > 0) ? nod(result, elem) : undefined, data[0]);
