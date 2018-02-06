@@ -22,6 +22,16 @@ QUnit.module('Тестируем функцию chess', function () {
 		assert.strictEqual(chess(3), expected);
 		assert.strictEqual(chess('3'), expected);
 	});
+    QUnit.test('Шахматная доска 5 на 5', function (assert) {
+        const expected =
+            '* * *\n' +
+            ' * * \n' +
+            '* * *\n' +
+            ' * * \n' +
+            '* * *\n' ;
+        assert.strictEqual(chess(5), expected);
+        assert.strictEqual(chess('5'), expected);
+    });
 
 	QUnit.test('Шахматная доска 8 на 8', function (assert) {
 		const expected =
@@ -36,5 +46,26 @@ QUnit.module('Тестируем функцию chess', function () {
 		assert.strictEqual(chess(8), expected);
 		assert.strictEqual(chess('8'), expected);
 	});
+    QUnit.test('Шахматная доска 15 на 15', function (assert) {
+        const expected =
+            '* * * * * * * *\n' +
+            ' * * * * * * * \n' +
+            '* * * * * * * *\n' +
+            ' * * * * * * * \n' +
+            '* * * * * * * *\n' +
+            ' * * * * * * * \n' +
+            '* * * * * * * *\n' +
+            ' * * * * * * * \n' +
+            '* * * * * * * *\n' +
+            ' * * * * * * * \n' +
+            '* * * * * * * *\n' +
+            ' * * * * * * * \n' +
+            '* * * * * * * *\n' +
+            ' * * * * * * * \n' +
+            '* * * * * * * *\n' ;
+
+        assert.strictEqual(chess(15), expected);
+        assert.strictEqual(chess('15'), expected);
+    });
 
 });
